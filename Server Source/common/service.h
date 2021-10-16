@@ -1,0 +1,1 @@
+#define __PIN_CODE_HAKYZZ__
