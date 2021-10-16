@@ -81,16 +81,8 @@ int nPasswordDiff = strcmp(szEncrytPassword, szPassword);
 						}
 						else
 						{
-							std::string stPin = szPin; 
-
-							if (!std::all_of(stPin.begin(), stPin.end(), isdigit))
-							{
-								LoginFailure(d, "WRPIN");
-								sys_log(0, "Wrong Pin");
-								M2_DELETE(pinfo);
-								break;
-							}
-
+							std::string stPin = szPin;
+							
 							char	szLoginEscaped[LOGIN_MAX_LEN  * 2+ 1];
 							DBManager::instance().EscapeString(szLoginEscaped, sizeof(szLoginEscaped), pinfo->login, strlen(pinfo->login));
 
